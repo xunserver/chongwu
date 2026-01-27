@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "context7": {
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "ctx7sk-6e958a91-3598-4651-9d00-57e60eb60de5"
+      ],
+      "command": "npx"
+    },
+    "shadcn": {
+      "args": ["-y", "shadcn@latest", "mcp"],
+      "command": "npx"
+    },
+    "spec-workflow": {
+      "args": ["-y", "@pimzino/spec-workflow-mcp@latest", "/home/xun/project/chongwu"],
+      "command": "npx"
+    },
+    "supabase": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp?project_ref=dtcrvsxpfawcgexivqsz"
+    }
+  }
+}
