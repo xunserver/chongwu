@@ -12,6 +12,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@shadcn': fileURLToPath(new URL('./src/shadcn', import.meta.url)),
     },
   },
 })
