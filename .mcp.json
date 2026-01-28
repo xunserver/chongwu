@@ -9,20 +9,8 @@
       ],
       "command": "npx"
     },
-    "shadcn": {
-      "args": [
-        "-y",
-        "shadcn@latest",
-        "mcp"
-      ],
-      "command": "npx"
-    },
     "spec-workflow": {
-      "args": [
-        "-y",
-        "@pimzino/spec-workflow-mcp@latest",
-        "/home/xun/project/chongwu"
-      ],
+      "args": ["-y", "@pimzino/spec-workflow-mcp@latest", "/home/xun/project/chongwu"],
       "command": "npx"
     },
     "supabase": {
@@ -31,10 +19,7 @@
     },
     "shadcnVue": {
       "command": "npx",
-      "args": [
-        "shadcn-vue@latest",
-        "mcp"
-      ]
+      "args": ["-y", "shadcn-vue@latest", "mcp"]
     }
   }
 }
