@@ -1,0 +1,14 @@
+{
+  "filePath": ".spec-workflow/specs/user-authentication/tasks.md",
+  "currentVersion": 1,
+  "snapshots": [
+    {
+      "version": 1,
+      "filename": "snapshot-001.json",
+      "timestamp": "2026-01-28T06:53:56.169Z",
+      "trigger": "initial",
+      "approvalId": "approval_1769583236163_fleqryqhc",
+      "approvalTitle": "Tasks: User Authentication System Implementation"
+    }
+  ]
+}

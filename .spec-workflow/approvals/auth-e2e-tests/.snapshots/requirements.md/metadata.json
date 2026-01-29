@@ -1,0 +1,14 @@
+{
+  "filePath": ".spec-workflow/specs/auth-e2e-tests/requirements.md",
+  "currentVersion": 1,
+  "snapshots": [
+    {
+      "version": 1,
+      "filename": "snapshot-001.json",
+      "timestamp": "2026-01-28T13:47:41.742Z",
+      "trigger": "initial",
+      "approvalId": "approval_1769608061737_ary0eam42",
+      "approvalTitle": "认证功能端到端测试 - Requirements 阶段"
+    }
+  ]
+}

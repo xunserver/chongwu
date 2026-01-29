@@ -1,14 +1,5 @@
 {
   "mcpServers": {
-    "context7": {
-      "args": [
-        "-y",
-        "@upstash/context7-mcp",
-        "--api-key",
-        "ctx7sk-6e958a91-3598-4651-9d00-57e60eb60de5"
-      ],
-      "command": "npx"
-    },
     "spec-workflow": {
       "args": ["-y", "@pimzino/spec-workflow-mcp@latest", "/home/xun/project/chongwu"],
       "command": "npx"
@@ -20,6 +11,18 @@
     "shadcnVue": {
       "command": "npx",
       "args": ["-y", "shadcn-vue@latest", "mcp"]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--ws-endpoint=ws://127.0.0.1:9222/devtools/browser/"
+      ]
+    },
+    "vibe_kanban": {
+      "command": "npx",
+      "args": ["-y", "vibe-kanban@latest", "--mcp"]
     }
   }
 }
