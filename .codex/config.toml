@@ -1,0 +1,14 @@
+[mcp_servers.spec-workflow]
+command = "npx"
+args = ["-y", "@pimzino/spec-workflow-mcp@latest", "/home/xun/project/chongwu"]
+
+[mcp_servers.supabase]
+url = "https://mcp.supabase.com/mcp?project_ref=dtcrvsxpfawcgexivqsz"
+
+[mcp_servers.shadcnVue]
+command = "npx"
+args = ["-y", "shadcn-vue@latest", "mcp"]
+
+[mcp_servers.vibe_kanban]
+command = "npx"
+args = ["-y", "vibe-kanban@latest", "--mcp"]
