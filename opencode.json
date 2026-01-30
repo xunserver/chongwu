@@ -15,6 +15,10 @@
       "type": "local",
       "enabled": true,
       "command": ["npx", "-y", "shadcn-vue@latest", "mcp"]
+    },
+    "vibe_kanban": {
+      "type": "local",
+      "command": ["npx", "-y", "vibe-kanban@latest", "--mcp"]
     }
   }
 }
