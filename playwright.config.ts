@@ -40,7 +40,7 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     /* Only on CI systems run the tests headless */
-    headless: !!process.env.CI,
+    headless: true
   },
 
   /* Configure projects for major browsers */
@@ -57,20 +57,20 @@ export default defineConfig({
         ...devices['Desktop Firefox'],
       },
     },
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-      },
-    },
-
-    /* Test against mobile viewports. */
     // {
-    //   name: 'Mobile Chrome',
+    //   name: 'webkit',
     //   use: {
-    //     ...devices['Pixel 5'],
+    //     ...devices['Desktop Safari'],
     //   },
     // },
+
+    /* Test against mobile viewports. */
+    {
+      name: 'Mobile Chrome',
+      use: {
+        ...devices['Pixel 7'],
+      },
+    },
     // {
     //   name: 'Mobile Safari',
     //   use: {
