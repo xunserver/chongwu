@@ -47,3 +47,5 @@ __screenshots__/
 
 test-results/
 playwright-report/
+
+__pycache__

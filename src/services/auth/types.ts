@@ -88,6 +88,13 @@ export interface IAuthService {
   updatePassword(newPassword: string): Promise<AuthResult<void>>
 
   /**
+   * 更新用户邮箱
+   * @param newEmail 新邮箱
+   * @returns 更新结果
+   */
+  updateEmail(newEmail: string): Promise<AuthResult<void>>
+
+  /**
    * 获取当前会话
    * @returns 会话信息
    */

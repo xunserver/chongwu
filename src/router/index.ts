@@ -44,7 +44,7 @@ const homeRoute: RouteRecordRaw = {
 const profileRoute: RouteRecordRaw = {
   path: '/profile',
   name: 'profile',
-  component: () => import('@/views/ProfileView.vue'),
+  component: () => import('@/features/profile/views/ProfileView.vue'),
   meta: {
     title: '用户中心',
     description: '查看和管理您的账户信息',

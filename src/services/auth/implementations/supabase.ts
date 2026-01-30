@@ -206,6 +206,31 @@ export class SupabaseAuthService implements IAuthService {
   }
 
   /**
+   * 更新用户邮箱
+   */
+  async updateEmail(newEmail: string): Promise<AuthResult<void>> {
+    // 使用扁平化错误处理
+    const [result, exception] = await to(
+      supabase.auth.updateUser({ email: newEmail })
+    )
+
+    // 处理未捕获的异常
+    if (exception) {
+      return {
+        data: null,
+        error: createSystemError('Network or system error', 'EXCEPTION')
+      }
+    }
+
+    // 处理Supabase API错误
+    if (result.error) {
+      return { data: null, error: mapSupabaseError(result.error) }
+    }
+
+    return { data: null, error: null }
+  }
+
+  /**
    * 获取当前会话
    */
   async getSession(): Promise<AuthResult<AuthSession>> {

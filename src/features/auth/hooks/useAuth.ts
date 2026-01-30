@@ -26,6 +26,7 @@ export interface UseAuthReturn {
   signOutMutation: ReturnType<typeof useMutation<void, Error, void, unknown>>
   resetPasswordMutation: ReturnType<typeof useMutation<void, Error, string, unknown>>
   updatePasswordMutation: ReturnType<typeof useMutation<void, Error, string, unknown>>
+  updateEmailMutation: ReturnType<typeof useMutation<void, Error, { password: string; newEmail: string }, unknown>>
 
   // 响应式状态（向后兼容）
   loading: ReturnType<typeof ref<boolean>>
@@ -37,6 +38,7 @@ export interface UseAuthReturn {
   signOut: () => Promise<boolean>
   resetPassword: (email: string) => Promise<boolean>
   updatePassword: (newPassword: string) => Promise<boolean>
+  updateEmail: (password: string, newEmail: string) => Promise<boolean>
 
   // 会话管理
   initializeSession: () => Promise<void>
@@ -232,6 +234,32 @@ export function useAuth(): UseAuthReturn {
     },
   })
 
+  /**
+   * 更新用户邮箱
+   */
+  const updateEmailMutation = useMutation<void, Error, { password: string; newEmail: string }>({
+    mutationFn: async ({ password, newEmail }) => {
+      loading.value = true
+      try {
+        const result = await authService.updateEmail(newEmail)
+        if (result.error) {
+          error.value = result.error
+          // 系统错误 → toast
+          if (result.error.isSystemError) {
+            toast.error(result.error.message)
+          }
+          throw result.error
+        }
+        error.value = null
+      } finally {
+        loading.value = false
+      }
+    },
+    onSuccess: () => {
+      toast.success('邮箱更新成功，请查收验证邮件')
+    },
+  })
+
   // ============================================================
   // 会话初始化
   // ============================================================
@@ -297,6 +325,15 @@ export function useAuth(): UseAuthReturn {
     }
   }
 
+  const updateEmail = async (password: string, newEmail: string): Promise<boolean> => {
+    try {
+      await updateEmailMutation.mutateAsync({ password, newEmail })
+      return true
+    } catch {
+      return false
+    }
+  }
+
   return {
     // TanStack Query 状态
     sessionQuery,
@@ -305,6 +342,7 @@ export function useAuth(): UseAuthReturn {
     signOutMutation,
     resetPasswordMutation,
     updatePasswordMutation,
+    updateEmailMutation,
 
     // 响应式状态
     loading,
@@ -316,6 +354,7 @@ export function useAuth(): UseAuthReturn {
     signOut,
     resetPassword,
     updatePassword,
+    updateEmail,
 
     // 会话管理
     initializeSession,
